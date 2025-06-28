@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IA en Acción Educativa</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f0f4f8;
+    }
+
+    .container {
+      max-width: 700px;
+      margin: 40px auto;
+      padding: 20px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    h1, h2 {
+      text-align: center;
+      color: #2a4d69;
+    }
+
+    .pregunta {
+      margin: 20px 0 10px;
+      font-weight: bold;
+      font-size: 1.1em;
+    }
+
+    .respuestas input[type="text"],
+    .respuestas textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 8px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    .respuestas label {
+      display: block;
+      margin: 10px 0;
+    }
+
+    .botones {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+    }
+
+    .botones button {
+      padding: 10px 20px;
+      background-color: #2a4d69;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .botones button:disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
+    }
+
+    #resultado {
+      margin-top: 30px;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      background: #e6f2ff;
+    }
+
+    .oculto {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>IA en Acción Educativa</h1>
+    <p>Responde las preguntas y recibe una propuesta de uso innovador de IA para actividades independientes.</p>
+
+    <form id="formulario">
+      <div class="pregunta" id="preguntaActual"></div>
+      <div class="respuestas" id="respuestas"></div>
+
+      <div class="botones">
+        <button type="button" id="anterior" disabled>Anterior</button>
+        <button type="button" id="siguiente">Siguiente</button>
+      </div>
+    </form>
+
+    <div id="resultado" class="oculto">
+      <h2>🎓 Tu propuesta innovadora con IA</h2>
+      <p id="sugerencia"></p>
+      <button onclick="location.reload()">Volver a comenzar</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
